@@ -6,14 +6,9 @@ import javax.inject.Inject
 
 class CurrencyRepository @Inject constructor(
     private val apiHelper: ApiHelper
-<<<<<<< HEAD
 ) {
     suspend fun convert(from: Currency, to: Currency, amount: Float) =
         apiHelper.convert(from, to, amount)
 
     suspend fun latest(base: Currency) = apiHelper.latest(base)
-=======
-){
-    suspend fun convert(from: String, to: String, amount: Float) = apiHelper.convert(from, to, amount)
->>>>>>> origin/main
 }

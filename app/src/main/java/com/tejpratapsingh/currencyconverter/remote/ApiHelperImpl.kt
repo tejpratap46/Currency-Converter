@@ -10,7 +10,6 @@ import javax.inject.Inject
 
 class ApiHelperImpl @Inject constructor(
     private val apiService: ApiService
-<<<<<<< HEAD
 ) : ApiHelper {
     override suspend fun convert(
         from: Currency,
@@ -21,8 +20,4 @@ class ApiHelperImpl @Inject constructor(
 
     override suspend fun latest(base: Currency): Response<LatestRates> =
         apiService.latest(from = base.code)
-=======
-): ApiHelper {
-    override suspend fun convert(from: String, to: String, amount: Float): Response<ConvertResponse> = apiService.convert(from, to, amount)
->>>>>>> origin/main
 }

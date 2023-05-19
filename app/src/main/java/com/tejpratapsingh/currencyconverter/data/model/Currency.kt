@@ -1,8 +1,6 @@
 package com.tejpratapsingh.currencyconverter.data.model
 
 sealed class Currency(val code: String, val name: String) {
-<<<<<<< HEAD
-
     companion object {
         fun asList(): List<Currency> {
             return listOf(
@@ -180,8 +178,6 @@ sealed class Currency(val code: String, val name: String) {
         }
     }
 
-=======
->>>>>>> origin/main
     object AED : Currency("AED", "United Arab Emirates Dirham")
     object AFN : Currency("AFN", "Afghan Afghani")
     object ALL : Currency("ALL", "Albanian Lek")
