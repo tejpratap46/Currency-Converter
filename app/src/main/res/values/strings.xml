@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CurrencyConverterApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_converter">Converter</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="search_country">Search Country</string>
+    <string name="convert">Convert</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="loading">Loading…</string>
+    <string name="retry">Retry</string>
+    <string name="equals">" = "</string>
+</resources>
