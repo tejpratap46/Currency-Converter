@@ -2,7 +2,8 @@ package com.tejpratapsingh.currencyconverter.interfaces
 
 import com.tejpratapsingh.currencyconverter.BuildConfig
 import com.tejpratapsingh.currencyconverter.data.response.ConvertResponse
-import com.tejpratapsingh.currencyconverter.data.response.LatestRates
+import com.tejpratapsingh.currencyconverter.data.response.LatestResponse
+import com.tejpratapsingh.currencyconverter.data.response.TimeSeriesResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -21,5 +22,14 @@ interface ApiService {
     suspend fun latest(
         @Header("apikey") apiKey: String = BuildConfig.API_KEY,
         @Query("base") from: String
-    ): Response<LatestRates>
+    ): Response<LatestResponse>
+
+    @GET("timeseries")
+    suspend fun timeseries(
+        @Header("apikey") apiKey: String = BuildConfig.API_KEY,
+        @Query("base") currency: String,
+        @Query("start_date") startDate: String,
+        @Query("end_date") endDate: String,
+        @Query("symbols") referenceCurrency: String
+    ): Response<TimeSeriesResponse>
 }

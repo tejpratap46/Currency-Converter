@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.converter.ConverterFragment">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -54,17 +53,6 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/button_converter_flip"
-            style="@style/Widget.Material3.Button.Icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/card_margin"
-            app:icon="@drawable/ic_flip_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_converter_from" />
-
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_converter_to"
             android:layout_width="match_parent"
@@ -76,7 +64,7 @@
             app:contentPadding="@dimen/card_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_converter_flip">
+            app:layout_constraintTop_toBottomOf="@id/card_converter_from">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -101,46 +89,30 @@
                     android:gravity="center_horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_convert_to_title" />
+                    app:layout_constraintTop_toBottomOf="@id/text_convert_to_title"
+                    tools:text="USD" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/progress_bar_currency_convert"
+            android:id="@+id/progress_bar_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/card_margin"
+            android:layout_marginVertical="@dimen/card_margin"
             android:indeterminate="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_converter_to" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_convert"
-            style="@style/Widget.Material3.Button.UnelevatedButton"
+        <com.tejpratapsingh.currencyconverter.ui.custom.HistoryChartView
+            android:id="@+id/chart_history"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/card_margin"
-            android:text="@string/convert"
-            android:textSize="18sp"
-            app:cornerRadius="@dimen/card_corner_radius"
+            android:layout_height="300dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/progress_bar_currency_convert" />
-
-        <TextView
-            android:id="@+id/text_convert_result"
-            style="@style/TextAppearance.Material3.DisplaySmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_convert"
-            tools:text="80.0" />
+            app:layout_constraintTop_toBottomOf="@id/progress_bar_history" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
