@@ -1,6 +1,6 @@
 package com.tejpratapsingh.currencyconverter.data.response
 
-data class LatestRates(
+data class LatestResponse(
     val success: Boolean,
     val timestamp: Long,
     val base: String,

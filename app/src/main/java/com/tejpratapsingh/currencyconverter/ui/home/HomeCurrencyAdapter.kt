@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.tejpratapsingh.currencyconverter.data.model.Currency
-import com.tejpratapsingh.currencyconverter.data.response.LatestRates
+import com.tejpratapsingh.currencyconverter.data.response.LatestResponse
 import com.tejpratapsingh.currencyconverter.databinding.ItemCurrencyBinding
 import com.tejpratapsingh.currencyconverter.interfaces.OnCurrencySelectionListener
 import java.util.Locale
 
 class HomeCurrencyAdapter(
-    private var latestRates: LatestRates? = null,
+    private var latestResponse: LatestResponse? = null,
     private val currencySelectionListener: OnCurrencySelectionListener? = null
 ) : RecyclerView.Adapter<HomeCurrencyAdapter.CurrencyViewHolder>() {
 
@@ -37,7 +37,7 @@ class HomeCurrencyAdapter(
         holder.viewBinding.textCurrencyName.text = currency.name
         holder.viewBinding.textCurrencyValue.text = "???"
 
-        latestRates?.rates?.get(currency.code)?.let {
+        latestResponse?.rates?.get(currency.code)?.let {
             holder.viewBinding.textCurrencyValue.text =
                 String.format(Locale.getDefault(), "%f", it)
         }
@@ -48,14 +48,14 @@ class HomeCurrencyAdapter(
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updatedLatestRates(latestRates: LatestRates) {
-        this.latestRates = latestRates
+    fun updatedLatestRates(latestResponse: LatestResponse) {
+        this.latestResponse = latestResponse
         notifyDataSetChanged()
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun clear() {
-        this.latestRates = null
+        this.latestResponse = null
         notifyDataSetChanged()
     }
 
