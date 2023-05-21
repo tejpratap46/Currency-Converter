@@ -1,6 +1,7 @@
 # Currency-Converter
 Currency Converter App
 
+To download app, go to [releases](https://github.com/tejpratap46/Currency-Converter/releases)
 
 Screenshots:
 
