@@ -11,4 +11,6 @@
     <string name="retry">Retry</string>
     <string name="equals">" = "</string>
     <string name="title_history">History</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Not connected, please check your network connection</string>
 </resources>

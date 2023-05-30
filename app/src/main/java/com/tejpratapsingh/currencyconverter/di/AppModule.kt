@@ -1,13 +1,17 @@
 package com.tejpratapsingh.currencyconverter.di
 
+import android.content.Context
 import com.tejpratapsingh.currencyconverter.BuildConfig
 import com.tejpratapsingh.currencyconverter.interfaces.ApiHelper
 import com.tejpratapsingh.currencyconverter.interfaces.ApiService
+import com.tejpratapsingh.currencyconverter.interfaces.NetworkConnectivityService
 import com.tejpratapsingh.currencyconverter.remote.ApiHelperImpl
+import com.tejpratapsingh.currencyconverter.remote.NetworkConnectivityServiceImpl
 import com.tejpratapsingh.currencyconverter.util.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -52,4 +56,8 @@ object AppModule {
     @Singleton
     fun provideApiHelper(apiHelper: ApiHelperImpl): ApiHelper = apiHelper
 
+    @Provides
+    @Singleton
+    fun provideNetworkConnectivityService(@ApplicationContext appContext: Context): NetworkConnectivityService =
+        NetworkConnectivityServiceImpl(appContext)
 }
